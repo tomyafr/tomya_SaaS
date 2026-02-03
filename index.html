@@ -300,32 +300,6 @@
             .main-content { margin-left: 0; padding: 20px; }
             .detail-grid { grid-template-columns: 1fr; }
         }
-
-        /* Video Background - Dashboard Only */
-        #page-dashboard { position: relative; overflow: hidden; }
-        .dashboard-video-bg {
-            position: fixed;
-            top: 0;
-            left: var(--sidebar-width);
-            width: calc(100% - var(--sidebar-width));
-            height: 100vh;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0.15;
-            pointer-events: none;
-        }
-        .dashboard-video-overlay {
-            position: fixed;
-            top: 0;
-            left: var(--sidebar-width);
-            width: calc(100% - var(--sidebar-width));
-            height: 100vh;
-            z-index: -1;
-            background: radial-gradient(circle at center, transparent 0%, #0a0a0f 70%);
-            pointer-events: none;
-        }
-        #page-dashboard:not(.active) ~ .dashboard-video-bg,
-        #page-dashboard:not(.active) ~ .dashboard-video-overlay { display: none; }
     </style>
 </head>
 <body>
@@ -343,7 +317,7 @@
     <div class="app-container" id="appContainer">
         <aside class="sidebar">
             <div class="sidebar-logo">
-                <div class="logo-icon">⚡</div>
+                <div class="logo-icon"><img src="Chatbot_TOMYA_icone.png" alt="TOMYA" style="width:100%;height:100%;border-radius:10px;object-fit:cover;"></div>
                 <h1>TOMYA<span>.</span></h1>
             </div>
             <nav class="sidebar-nav" id="sidebarNav">
@@ -368,12 +342,6 @@
         <main class="main-content">
             <!-- DASHBOARD -->
             <div class="page active" id="page-dashboard">
-                <!-- Video Background -->
-                <video class="dashboard-video-bg" autoplay muted loop playsinline>
-                    <source src="background.mp4" type="video/mp4">
-                </video>
-                <div class="dashboard-video-overlay"></div>
-                <!-- End Video Background -->
                 <div class="page-header"><div><h1 class="page-title">Dashboard</h1><p class="page-subtitle">Vue d'ensemble de vos auto-écoles</p></div></div>
                 <div class="stats-grid">
                     <div class="stat-card primary" onclick="navigateWithFilter('all')"><div class="stat-header"><div class="stat-icon">🏫</div></div><div class="stat-value" id="statTotal">-</div><div class="stat-label">Total Auto-Écoles</div></div>
