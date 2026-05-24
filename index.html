@@ -734,7 +734,6 @@
             loadAgenda();
             loadHistorique();
             setupCalendarButtons();
-            initPlan30();
         }
 
         // Setup Calendar Buttons
@@ -770,6 +769,7 @@
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             const pageEl = document.getElementById('page-' + page);
             if (pageEl) pageEl.classList.add('active');
+            if (page === 'plan30') initPlan30();
         }
 
         function navigateWithFilter(filter) {
