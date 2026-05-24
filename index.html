@@ -605,13 +605,13 @@
                 <div class="page-header">
                     <div>
                         <h1 class="page-title">Plan 30 jours — Acquisition premier client</h1>
-                        <p class="page-subtitle">Objectif : 1 contrat signé d'ici le 30 juin (2 500–3 000€)</p>
+                        <p class="page-subtitle">Objectif : 1 audit gratuit converti en contrat signé d'ici le 30 juin · Setup 1 500–2 500€ + abonnement 200–400€/mois</p>
                     </div>
                 </div>
                 <div class="plan30-header-box">
                     <div class="plan30-top-row">
                         <div class="plan30-jour-j" id="plan30JourJ">—</div>
-                        <div class="plan30-task-count" id="plan30TaskCount">0 / 23 tâches complétées</div>
+                        <div class="plan30-task-count" id="plan30TaskCount">0 / 32 tâches complétées</div>
                     </div>
                     <div class="plan30-progress-row">
                         <div class="plan30-progress-track">
@@ -1363,36 +1363,53 @@
         // ===== PLAN 30 JOURS =====
 
         const PLAN30_TASKS = {
-            s1_tom_1: { label: "Rédiger l'offre en une page (Pour qui / Problème / Solution / Livrable / Prix / Délai / Garantie)", duration: "2h", week: 1, assignee: 'tom' },
-            s1_tom_2: { label: "Ajouter une vue Pipeline Client (Kanban) dans TOMYA", duration: "4h", week: 1, assignee: 'tom' },
-            s1_tom_3: { label: "Créer la landing page de vente (HTML single page sur Vercel)", duration: "6h", week: 1, assignee: 'tom' },
-            s1_tom_4: { label: "Setup automatisations n8n (enrichissement, séquences mail, logging)", duration: "4h", week: 1, assignee: 'tom' },
-            s1_mat_1: { label: "Construire liste 100 prospects qualifiés (Google Maps + Pappers, TPE 3-20 salariés BFC)", duration: "8h", week: 1, assignee: 'mat' },
-            s1_mat_2: { label: "Rédiger 3 scripts d'approche (cold call, cold mail, LinkedIn)", duration: "3h", week: 1, assignee: 'mat' },
-            s1_mat_3: { label: "20 appels de chauffe sur prospects de moindre valeur", duration: "5h", week: 1, assignee: 'mat' },
-            s2_tom_1: { label: "Lancer séquence email automatisée via n8n", duration: "3h", week: 2, assignee: 'tom' },
-            s2_tom_2: { label: "Prendre en charge 40 appels prospects tech-friendly", duration: "8h", week: 2, assignee: 'tom' },
-            s2_tom_3: { label: "Améliorer module Script Appel avec brief IA par prospect", duration: "3h", week: 2, assignee: 'tom' },
-            s2_mat_1: { label: "60 appels sur prospects 'old school' (artisans, garages, paysagistes)", duration: "15h", week: 2, assignee: 'mat' },
-            s2_mat_2: { label: "Logger systématiquement chaque appel dans TOMYA", duration: "inclus", week: 2, assignee: 'mat' },
-            s3_tom_1: { label: "Construire un mini-prototype personnalisé avant chaque démo (1-2h par démo)", duration: "10h", week: 3, assignee: 'tom' },
-            s3_tom_2: { label: "Mener les démos techniques (5min écoute / 15min démo / 10min Q&A)", duration: "8h", week: 3, assignee: 'tom' },
-            s3_mat_1: { label: "Assister aux démos et logger les retours", duration: "6h", week: 3, assignee: 'mat' },
-            s3_mat_2: { label: "Rédiger et envoyer les devis (template prêt)", duration: "4h", week: 3, assignee: 'mat' },
-            s3_mat_3: { label: "Relances entre démos et devis", duration: "5h", week: 3, assignee: 'mat' },
-            s4_tom_1: { label: "Construire banque de réponses pré-rédigées par objection", duration: "2h", week: 4, assignee: 'tom' },
-            s4_tom_2: { label: "Gérer les négos techniques", duration: "variable", week: 4, assignee: 'tom' },
-            s4_tom_3: { label: "Préparer offre de fin de mois si rien ne signe à J27 (3 mois maintenance offerts)", duration: "1h", week: 4, assignee: 'tom' },
-            s4_mat_1: { label: "Relances tous les 48-72h sur devis chauds (max 5 fois)", duration: "6h", week: 4, assignee: 'mat' },
-            s4_mat_2: { label: "Tenir à jour le statut de chaque deal dans TOMYA", duration: "inclus", week: 4, assignee: 'mat' },
-            s4_mat_3: { label: "Closing du contrat signé", duration: "variable", week: 4, assignee: 'mat' },
+            // S1 — Tom
+            s1_tom_1: { label: "Rédiger l'offre détaillée (1 page) : qui / problème / solution / livrables / setup + abonnement / délai / garantie 30 jours", duration: "3h", week: 1, assignee: 'tom' },
+            s1_tom_2: { label: "Créer la trame d'audit gratuit (1h en visio) : 8 questions découverte + grille d'identification des automatisations possibles", duration: "2h", week: 1, assignee: 'tom' },
+            s1_tom_3: { label: "Créer le template de contrat (setup + abonnement) avec mentions RGPD et propriété des workflows", duration: "3h", week: 1, assignee: 'tom' },
+            s1_tom_4: { label: "Construire la landing page de vente sur Vercel avec CTA 'Réserver un audit gratuit' relié à Calendly", duration: "6h", week: 1, assignee: 'tom' },
+            s1_tom_5: { label: "Setup n8n self-hosted + 3 workflows (enrichissement prospect, séquence mail multi-touch, log auto dans TOMYA)", duration: "5h", week: 1, assignee: 'tom' },
+            s1_tom_6: { label: "Étude de cas Lenoir formatée (1 page PDF) : contexte, problème, solution livrée, résultat, témoignage", duration: "2h", week: 1, assignee: 'tom' },
+            // S1 — Mathieu
+            s1_mat_1: { label: "Construire la base de 60 prospects qualifiés (TPE 3-20 salariés Grand Est) via Google Maps + Pappers, secteurs prioritaires à valider avec Tom", duration: "6h", week: 1, assignee: 'mat' },
+            s1_mat_2: { label: "Activation réseau personnel : 20 contacts à recontacter (famille, anciens collègues, contacts via Lenoir) avec message personnalisé", duration: "4h", week: 1, assignee: 'mat' },
+            s1_mat_3: { label: "Rédiger les 3 scripts d'approche (cold call 90s, cold mail 5 lignes, message LinkedIn) avec l'angle 'audit gratuit 1h' et la preuve Lenoir", duration: "3h", week: 1, assignee: 'mat' },
+            s1_mat_4: { label: "10 appels de chauffe sur prospects secondaires pour roder le script avant la vraie campagne", duration: "4h", week: 1, assignee: 'mat' },
+            // S2 — Tom
+            s2_tom_1: { label: "Lancer la séquence email automatisée sur les 60 prospects (J0 mail 1, J3 mail 2, J7 mail 3)", duration: "2h", week: 2, assignee: 'tom' },
+            s2_tom_2: { label: "25 appels prospects tech-friendly (agences, cabinets, ESN, e-commerce)", duration: "6h", week: 2, assignee: 'tom' },
+            s2_tom_3: { label: "Module Brief IA dans TOMYA : génère 1 page de contexte par prospect avant chaque appel (point de douleur, accroche, 3 questions)", duration: "4h", week: 2, assignee: 'tom' },
+            s2_tom_4: { label: "10 messages LinkedIn personnalisés sur des dirigeants identifiés via Sales Navigator ou recherche manuelle", duration: "3h", week: 2, assignee: 'tom' },
+            // S2 — Mathieu
+            s2_mat_1: { label: "35 appels sur les prospects 'old school' (artisans, garages, paysagistes, fleuristes, sociétés de nettoyage)", duration: "12h", week: 2, assignee: 'mat' },
+            s2_mat_2: { label: "Logger chaque appel dans TOMYA avec : sentiment, intérêt, objection, prochaine étape", duration: "inclus", week: 2, assignee: 'mat' },
+            s2_mat_3: { label: "Relances J+3 et J+7 sur les prospects intéressés mais pas encore engagés", duration: "4h", week: 2, assignee: 'mat' },
+            // S3 — Tom
+            s3_tom_1: { label: "Réaliser 4 audits gratuits en visio (1h chacun) : écoute 20min / questions découverte 25min / restitution 15min", duration: "4h", week: 3, assignee: 'tom' },
+            s3_tom_2: { label: "Pour chaque audit : construire un mini-prototype personnalisé (1-2h) à montrer en restitution comme preuve de capacité", duration: "8h", week: 3, assignee: 'tom' },
+            s3_tom_3: { label: "Rédiger 4 propositions commerciales chiffrées (setup + abonnement) personnalisées, livrées sous 48h post-audit", duration: "6h", week: 3, assignee: 'tom' },
+            s3_tom_4: { label: "Workflow n8n : transcription Whisper de chaque audit + génération auto du brouillon de proposition + mise à jour TOMYA", duration: "3h", week: 3, assignee: 'tom' },
+            // S3 — Mathieu
+            s3_mat_1: { label: "Assister à 4 audits en mode silencieux ou co-pilote (selon profil prospect)", duration: "4h", week: 3, assignee: 'mat' },
+            s3_mat_2: { label: "Réaliser 2 audits en autonomie sur les prospects qu'il a chauffés", duration: "2h", week: 3, assignee: 'mat' },
+            s3_mat_3: { label: "Envoyer les propositions par mail avec accusé de lecture, planifier la relance J+3", duration: "3h", week: 3, assignee: 'mat' },
+            s3_mat_4: { label: "Tenir à jour le pipeline TOMYA : statut de chaque deal (audit fait / proposition envoyée / chaud / froid)", duration: "inclus", week: 3, assignee: 'mat' },
+            // S4 — Tom
+            s4_tom_1: { label: "Construire la banque de réponses pré-rédigées par objection (prix, délai, 'j'ai un neveu', 'on va attendre', 'il faut que j'en parle à mon associé')", duration: "2h", week: 4, assignee: 'tom' },
+            s4_tom_2: { label: "Gérer les négos techniques entrantes : réponses sous 4h en semaine", duration: "variable", week: 4, assignee: 'tom' },
+            s4_tom_3: { label: "Préparer l'offre fin de mois activable à J27 si aucune signature (1 mois d'abonnement offert OU 3 mois de support premium inclus)", duration: "1h", week: 4, assignee: 'tom' },
+            s4_tom_4: { label: "Préparer le mail de bienvenue + onboarding du futur client signé (planning kick-off, accès, étapes prochaines)", duration: "2h", week: 4, assignee: 'tom' },
+            // S4 — Mathieu
+            s4_mat_1: { label: "Relances tous les 48-72h sur les propositions chaudes (max 5 contacts, toujours avec un élément nouveau : étude de cas, témoignage, info sectorielle)", duration: "6h", week: 4, assignee: 'mat' },
+            s4_mat_2: { label: "Closing en direct : appel de signature, envoi du contrat e-signature, suivi du paiement de l'acompte", duration: "variable", week: 4, assignee: 'mat' },
+            s4_mat_3: { label: "Bilan de fin de plan dans TOMYA : ce qui a marché, taux de conversion par canal, prochaines actions juillet", duration: "2h", week: 4, assignee: 'mat' },
         };
 
         const PLAN30_WEEKS_META = [
-            { num: 1, dates: '1 au 7 juin',   objective: 'Offre claire écrite + 100 prospects qualifiés dans TOMYA + landing page' },
-            { num: 2, dates: '8 au 14 juin',  objective: '100 prospects contactés, 8 RDV bookés' },
-            { num: 3, dates: '15 au 21 juin', objective: '6-8 démos faites, 3-4 devis envoyés' },
-            { num: 4, dates: '22 au 30 juin', objective: '1 contrat signé' },
+            { num: 1, dates: '1 au 7 juin',   objective: 'Offre cadrée + trame d'audit + 60 prospects qualifiés + landing page' },
+            { num: 2, dates: '8 au 14 juin',  objective: '60 prospects contactés via 3 canaux + 6 audits gratuits bookés' },
+            { num: 3, dates: '15 au 21 juin', objective: '6 audits réalisés + 3-4 propositions chiffrées envoyées' },
+            { num: 4, dates: '22 au 30 juin', objective: 'Closing + 1 contrat signé (setup + abonnement)' },
         ];
 
         let plan30State = { tasks: {}, notes: {}, weeks_open: {} };
@@ -1435,6 +1452,12 @@
                 const cw = getPlan30CurrentWeek();
                 plan30State.weeks_open = { 1: cw === 1, 2: cw === 2, 3: cw === 3, 4: cw === 4 };
             }
+            // Migration silencieuse : purge les IDs obsolètes qui ne matchent plus PLAN30_TASKS
+            const validIds = new Set(Object.keys(PLAN30_TASKS));
+            let migrated = false;
+            Object.keys(plan30State.tasks).forEach(id => { if (!validIds.has(id)) { delete plan30State.tasks[id]; migrated = true; } });
+            Object.keys(plan30State.notes).forEach(id => { if (!validIds.has(id)) { delete plan30State.notes[id]; migrated = true; } });
+            if (migrated) savePlan30State();
         }
 
         function savePlan30State() {
